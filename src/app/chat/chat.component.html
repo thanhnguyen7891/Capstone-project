@@ -1,0 +1,21 @@
+<h3>Connect with People</h3>
+<table class="table mt-3"> 
+    <thead>
+        <tr>
+            <th>User ID</th>
+            <th>User Name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.id}} </td>
+            <td>{{user.name}} </td>
+            <td>
+                <button class="btn btn-info" (click)="chatMessages(user.username)">View Messages</button>
+                <button class="btn btn-danger mx-3" (click)="goChatDetails(user.username)">Chat Now</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+

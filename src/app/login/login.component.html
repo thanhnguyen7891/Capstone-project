@@ -1,0 +1,25 @@
+<div>
+  <h1>Log In</h1>
+<div class="form-group">
+  <label for="" class="form-label">User Name</label>
+  
+  <input type="text" class="form-control" id="username"
+         required
+         [(ngModel)]="user.username" name="username">
+</div>
+
+<div class="form-group">
+  <label for="" class="form-label">Password</label>
+  <input type="password"  class="form-control" id="password"
+         [(ngModel)]="user.password" name="password">
+</div>
+<div class="form-group">
+  <label for="" class="form-label">User Type</label>
+     <select class="form-control" id="power" required>
+       <option *ngFor="let type of user_type" [value]="type">{{type}}</option>
+     </select>
+   </div>
+   
+<br>
+<button (click)="testToken()">Login</button>
+</div>

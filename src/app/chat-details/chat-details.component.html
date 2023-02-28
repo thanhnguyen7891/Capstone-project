@@ -1,0 +1,13 @@
+<h3>Create A Chat</h3>
+<div>
+    Sender: <label for="sender" >{{username}}</label>
+</div>
+<div>
+    Receiver:  <label for="receiver">{{receiver}}</label>
+</div>
+<div>
+    Message <input type="text" id="message" [(ngModel)]="chat.message">
+</div>
+<br>
+<button (click)="addChat()">Send</button>
+

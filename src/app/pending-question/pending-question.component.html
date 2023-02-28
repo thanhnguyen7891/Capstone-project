@@ -1,0 +1,31 @@
+<h3>Pending Question</h3>
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th>Question ID</th>
+            <th>Image</th>
+            <th>Title</th>
+            <th>Topic</th>
+            <th>Description</th>
+            <th>Created By</th>
+            <th>Datetime</th>
+            <th>Action </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let question of questions">
+            <td>{{question.id}}</td>
+            <td>{{question.image_src}}</td>
+            <td>{{question.title}}</td>
+            <td>{{question.topic}}</td>
+            <td>{{question.description_question}}</td>
+            <td>{{question.created_by}}</td>
+            <td>{{currentDate | date:'yyyy-MM-dd hh:mm a'}}</td>
+            <td>
+                <button class="btn btn-info" (click)="approved(question)">Approve</button>
+                <button class="btn btn-danger mx-3" (click)="declined(question.id)">Remove</button>
+            </td>
+
+        </tr>
+    </tbody>
+</table>

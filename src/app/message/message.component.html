@@ -1,0 +1,34 @@
+<h3>Outgoing Messages</h3>
+<table class="table mt-1"> 
+    <thead>
+        <tr>
+            <th>Receiver</th>
+            <th>Message</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let message of outgoing">
+            <td>{{message.toUser}} </td>
+            <td>{{message.message}} </td>
+            <td>{{message.datetime}} </td>
+        </tr>
+    </tbody>
+</table>
+<h3>Incoming Messages</h3>
+<table class="table mt-1"> 
+    <thead>
+        <tr>
+            <th>Sender</th>
+            <th>Message</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let message of incoming">
+            <td>{{message.fromUser}} </td>
+            <td>{{message.message}} </td>
+            <td>{{message.datetime}} </td>
+        </tr>
+    </tbody>
+</table>

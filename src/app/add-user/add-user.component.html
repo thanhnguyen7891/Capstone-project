@@ -1,0 +1,19 @@
+<h3>Add New User</h3>
+<div>
+    Full Name <input type="text" id="name" [(ngModel)]="user.name">
+</div>
+<div>
+    UserName <input type="text" id="username" [(ngModel)]="user.username">
+</div>
+<div>
+    Password <input type="password" id="password" [(ngModel)]="user.password">
+</div>
+<div>
+    User Email <input type="text" id="email" [(ngModel)]="user.email">
+</div>
+<div>
+    User Type <input type="text" id="userType" [(ngModel)]="user.userType">
+</div>
+<br>
+<button (click)="addUser()">CREATE</button>
+

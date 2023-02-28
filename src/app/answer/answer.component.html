@@ -1,0 +1,20 @@
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th>Answer ID</th>
+            <th>Image</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Datetime</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let answer of answers">
+            <td>{{answer.id}}</td>
+            <td>{{answer.image}}</td>
+            <td>{{answer.description_answer}}</td>
+            <td>{{answer.status}}</td>
+            <td>{{currentDate | date:'yyyy-MM-dd hh:mm a'}}</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,34 @@
+<h1>Sign Up</h1>
+<div class="form-group">
+  Full Name
+  <input type="text" class="form-control" id="name"
+         required
+         [(ngModel)]="user.name" name="name">
+</div>
+<div class="form-group">
+  User Name
+  <input type="text" class="form-control" id="username"
+         required
+         [(ngModel)]="user.username" name="username">
+</div>
+
+<div class="form-group">
+  Password
+  <input type="password"  class="form-control" id="password"
+         [(ngModel)]="user.password" name="password">
+</div>
+<div class="form-group">
+  User Email
+  <input type="text" class="form-control" id="email"
+         required
+         [(ngModel)]="user.email" name="email">
+</div>
+<div class="form-group">
+ User Type
+  <select class="form-control" id="power" required>
+    <option *ngFor="let type of user_type" [value]="type">{{type}}</option>
+  </select>
+</div>
+
+<br>
+<button type="submit" (click)="saveUser()">Sign Up</button>

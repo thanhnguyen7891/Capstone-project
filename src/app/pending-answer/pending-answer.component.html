@@ -1,0 +1,27 @@
+<h3>Pending Answer</h3>
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th>Answer ID</th>
+            <th>Image</th>
+            <th> Answer Description</th>
+            <th>Datetime</th>
+            <th>Created By</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let answer of answers">
+            <td>{{answer.id}}</td>
+            <td>{{answer.image_src}}</td>
+            <td>{{answer.description_answer}}</td>
+            <td>{{currentDate | date:'yyyy-MM-dd hh:mm a'}}</td>
+            <td>{{answer.created_by}}</td>
+            <td>
+                <button class="btn btn-info" (click)="approved(answer)">Approve</button>
+                <button class="btn btn-danger mx-3" (click)="declined(answer.id)">Remove</button>
+            </td>
+
+        </tr>
+    </tbody>
+</table>

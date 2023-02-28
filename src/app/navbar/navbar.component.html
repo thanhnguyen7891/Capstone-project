@@ -1,0 +1,20 @@
+<nav class="navbar navbar-light bg-primary"  *ngIf="isAuth">
+    <div class="container" >
+        <h1>Welcome to Capstone Project</h1>
+        <div class="d-flex">
+            <button  routerLink="home" type="text" class="btn btn-success">Home</button>
+            <button  routerLink="create-question" type="text" class="btn btn-success">Create Question</button>
+            <button  routerLink="search" type="text" class="btn btn-success">Search Question</button>
+            <button  routerLink="created-question" type="text" class="btn btn-success">Created Question</button>
+            <button  routerLink="create-answer" type="text" class="btn btn-success">Create Answer</button>
+            <button  routerLink="answer" type="text" class="btn btn-success">All Answers</button>
+            <button  routerLink="pending-question" type="text" class="btn btn-success">Pending Question</button>
+            <button  routerLink="pending-answer" type="text" class="btn btn-success">Pending Answer</button>
+            <button  routerLink="chat" type="text" class="btn btn-success">Chat With Us</button>
+            <button  routerLink="message" type="text" class="btn btn-success">Message</button>
+            <button type="text" class="btn btn-success"(click)="logout()">Log Out</button>
+            <button routerLink="login" type="text" class="btn btn-success" >Log in</button>
+
+        </div>
+    </div>
+</nav>

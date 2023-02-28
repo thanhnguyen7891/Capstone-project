@@ -1,0 +1,31 @@
+
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th >User ID</th>
+            <th >Full Name</th>
+            <th >Username</th>
+            <th >User Password</th>
+            <th >User Email</th>
+            <th >User Type</th>
+            <th >Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.id}} </td>
+            <td>{{user.name}} </td>
+            <td>{{user.username}} </td>
+            <td>{{user.password}} </td>
+            <td>{{user.email}} </td>
+            <td>{{user.userType}} </td>
+            <td>
+                <button class="btn btn-info" (click)="update(user.id)">Update</button>
+                <button class="btn btn-danger mx-3" (click)="delete(user.id)">Delete</button>
+                <button class="btn btn-danger mx-3" (click)="goChat(user.id)" >Chat Now</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+ 

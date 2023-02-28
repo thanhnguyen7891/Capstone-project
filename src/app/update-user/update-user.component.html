@@ -1,0 +1,10 @@
+<h3>Update User Information</h3>
+<div>User ID <label for="id">{{user.id}} </label>
+</div>
+<div>Full Name <input [(ngModel)]="user.name"  type="text" id="name" [value]="user.name"></div>
+<div>Username <input [(ngModel)]="user.username"  type="text" id="username" [value]="user.username"></div>
+<div>Password <input [(ngModel)]="user.password"  type="text" id="password" [value]="user.password"></div>
+<div>User Type <input [(ngModel)]="user.userType"  type="text" id="userType" [value]="user.userType"></div>
+<div>User Email <input [(ngModel)]="user.email"  type="text" id="email" [value]="user.email"></div>
+<br>
+<button (click)="update()">UPDATE</button>

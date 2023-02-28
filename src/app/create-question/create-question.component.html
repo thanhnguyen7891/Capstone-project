@@ -1,0 +1,16 @@
+<h3>Create New Question</h3>
+<div>
+    Image <input type="text" id="image" [(ngModel)]="question.image_src">
+</div>
+<div>
+    Title <input type="text" id="title" [(ngModel)]="question.title">
+</div>
+<div>
+    Topic <input type="text" id="topic" [(ngModel)]="question.topic">
+</div>
+<div>
+    Description <input type="text" id="description_question" [(ngModel)]="question.description_question">
+</div>
+<br>
+<button (click)="getQuestion()">CREATE</button>
+

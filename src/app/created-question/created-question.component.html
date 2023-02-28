@@ -1,0 +1,27 @@
+<h3>All The Approved Questions</h3>
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th>Question ID</th>
+            <th>Image</th>
+            <th>Title</th>
+            <th>Topic</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Approved By</th>
+            <th>Datetime</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let question of createdQuestions">
+            <td>{{question.id}}</td>
+            <td>{{question.image}}</td>
+            <td>{{question.title}}</td>
+            <td>{{question.topic}}</td>
+            <td>{{question.description_question}}</td>
+            <td>{{question.status}}</td>
+            <td>{{question.approved_by}}</td>
+            <td>{{currentDate | date:'yyyy-MM-dd hh:mm a'}}</td>
+        </tr>
+    </tbody>
+</table>
