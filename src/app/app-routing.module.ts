@@ -17,9 +17,11 @@ import { HomeComponent } from './home/home.component';
 import { ChatComponent } from './chat/chat.component';
 import { ChatDetailsComponent } from './chat-details/chat-details.component';
 import { MessageComponent } from './message/message.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch:'full'},
+  { path: '', redirectTo: '/landing-page', pathMatch:'full'},
+  { path: 'landing-page', component:LandingPageComponent},
   { path: 'login', component: LoginComponent},
   { path: 'signup', component: SignupComponent},
   { path: 'user', component: DashboardComponent},

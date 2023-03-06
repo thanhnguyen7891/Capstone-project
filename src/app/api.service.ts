@@ -12,29 +12,31 @@ export class ApiService {
   login:boolean=false
   username: string=''
   type: string=''
+  headers:any=null
 
-  getHeader(){
-   
-    return new HttpHeaders({
-      'Authorization':'Bearer '+this.auth.getToken()
+  getHeader(token:string){
+    this.login=true
+    this.headers= new HttpHeaders({
+      'Authorization':'Bearer '+token
     })
   }
   post(url:string,data: any){
-    return this.http.post(url, data,{headers:this.getHeader()})
+    return this.http.post(url, data,{headers:this.headers})
   }
   get(url:string){
-    return this.http.get(url,{headers:this.getHeader()})
+    return this.http.get(url,{headers:this.headers})
   
   }
   put(url:string, data:any){
-    return this.http.put(url,data,{headers:this.getHeader()})
+    return this.http.put(url,data,{headers:this.headers})
   }
   delete(url:string){
-    return this.http.delete(url,{headers:this.getHeader()})
+    return this.http.delete(url,{headers:this.headers})
   }
-  getToken(loginusername:string, loginpassword:string){
+  getToken(loginusername:string, loginpassword:string, type:string){
     let data:any={username:loginusername,password:loginpassword}
     this.username = loginusername;
+    this.type = type;
     return this.http.post('http://localhost:8080/authenticate',data,{responseType:'text'})
     
   }

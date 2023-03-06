@@ -15,23 +15,42 @@ export class LoginComponent implements OnInit {
   user_type = ['Admin', 'User'];
 
   constructor(
-    private auth: AuthService,
+    private route: ActivatedRoute,
     private service: ApiService,
     private router: Router,
   ){}
   
   ngOnInit(): void {
+    this.service.headers = null;
+    this.service.username = '';
+    this.service.type = '';
+    this.service.login = false;
+//      this.userLogin();
   }
   user: UserModel = new UserModel();
-
-
+  UserType: string = '';
+  userLogin(){
+    this.service.post(userUrl+ '/getLogin',this.user)
+    .subscribe(res =>{
+      console.log(res)
+    })
+  }
+  onSubmit(){
+    console.log(this.user);
+    this.userLogin();
+  }
+  token:string='';
   testToken(){
-    this.service.getToken(this.user.username, this.user.password)
+    this.service.getToken(this.user.username, this.user.password, this.UserType)
     .subscribe(res=>{
       console.log(res)
-      this.auth.setToken(res)
-      this.auth.setAuth(true)
+      this.service.getHeader(res)
+      this.loginToggle=true
       this.router.navigate(['chat'])
     })
   }
+  signUp(){
+    this.router.navigate(['signup'])
+  }
+  loginToggle:boolean=false
 }

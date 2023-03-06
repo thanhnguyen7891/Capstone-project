@@ -1,4 +1,4 @@
-import { Component, OnChanges, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
 import { AuthService } from '../auth.service';
@@ -8,23 +8,9 @@ import { AuthService } from '../auth.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
     constructor(
-      private auth:AuthService,
-      private router:Router
+      protected service : ApiService
       ){
     }
-    ngOnInit(): void {
-    }
-    get isAuth(){
-      return this.auth.getAuth()
-    }
-  
-   logout(){
-   
-   
-    this.auth.logout()
-    this.router.navigate(['login'])
-   }
-   
 }

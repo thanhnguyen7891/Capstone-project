@@ -23,6 +23,7 @@ import { HomeComponent } from './home/home.component';
 import { ChatComponent } from './chat/chat.component';
 import { ChatDetailsComponent } from './chat-details/chat-details.component';
 import { MessageComponent } from './message/message.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { MessageComponent } from './message/message.component';
     HomeComponent,
     ChatComponent,
     ChatDetailsComponent,
-    MessageComponent
+    MessageComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,

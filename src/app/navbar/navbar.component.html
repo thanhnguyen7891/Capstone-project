@@ -1,20 +1,18 @@
-<nav class="navbar navbar-light bg-primary"  *ngIf="isAuth">
+<nav class="navbar navbar-light bg-primary">
     <div class="container" >
         <h1>Welcome to Capstone Project</h1>
         <div class="d-flex">
-            <button  routerLink="home" type="text" class="btn btn-success">Home</button>
-            <button  routerLink="create-question" type="text" class="btn btn-success">Create Question</button>
-            <button  routerLink="search" type="text" class="btn btn-success">Search Question</button>
-            <button  routerLink="created-question" type="text" class="btn btn-success">Created Question</button>
-            <button  routerLink="create-answer" type="text" class="btn btn-success">Create Answer</button>
-            <button  routerLink="answer" type="text" class="btn btn-success">All Answers</button>
-            <button  routerLink="pending-question" type="text" class="btn btn-success">Pending Question</button>
-            <button  routerLink="pending-answer" type="text" class="btn btn-success">Pending Answer</button>
-            <button  routerLink="chat" type="text" class="btn btn-success">Chat With Us</button>
-            <button  routerLink="message" type="text" class="btn btn-success">Message</button>
-            <button type="text" class="btn btn-success"(click)="logout()">Log Out</button>
-            <button routerLink="login" type="text" class="btn btn-success" >Log in</button>
-
+            <button routerLink="landing-page" type="text" class="btn btn-success">Home</button>
+            <!--button *ngIf="this.service.type == 'Admin' || this.service.type == 'User'" routerLink="add-user" type="text" class="btn btn-success">Add User</button-->
+            <button *ngIf="this.service.type == 'Admin' || this.service.type == 'User'" routerLink="create-question" type="text" class="btn btn-success">Create a Question</button>
+            <button *ngIf="this.service.type == 'Admin' || this.service.type == 'User'" routerLink="search" type="text" class="btn btn-success">Search for Questions</button>
+            <button *ngIf="this.service.type == 'Admin' || this.service.type == 'User'" routerLink="created-question" type="text" class="btn btn-success">Created Questions</button>
+            <button *ngIf="this.service.type == 'Admin' || this.service.type == 'User'" routerLink="answer" type="text" class="btn btn-success">Created Answers</button>
+            <!--button routerLink="create-answer" type="text" class="btn btn-success">Create Answer</button-->
+            <button *ngIf="this.service.type == 'Admin' " routerLink="pending-question" type="text" class="btn btn-success">Pending Questions</button>
+            <button *ngIf="this.service.type == 'Admin' " routerLink="pending-answer" type="text" class="btn btn-success">Pending Answers</button>
+            <button *ngIf="this.service.type == 'Admin' || this.service.type == 'User'" routerLink="chat" type="text" class="btn btn-success">Chat</button>
+            <button *ngIf="this.service.type == 'Admin' || this.service.type == 'User'" routerLink="login" type="text" class="btn btn-success">Logout</button>
         </div>
     </div>
 </nav>
